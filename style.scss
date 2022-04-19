@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a.signup {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    div.left {
+        padding-left: 40px;
+    }
+
+    div.right {
+        padding-right: 40px;
+    }
+
+    h1 {
+        margin-right: 50px;
+        font-size: 29px;
+        font-weight: 700 bold;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            flex-direction: row;
+            li {
+                list-style: none;
+                margin-right: 35px;
+
+                a {
+                    color: black;
+                }
+            }
+        }
+    }
+
+    a.signup {
+        width: 140px;
+        height: 40px;
+    }
+}
+
+div.presentation {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    div.text {
+        position: relative;
+        width: 50%;
+        height: 700px;
+
+        div.txt-container {
+            position: absolute;
+            top: 172px;
+            left: 13vw;
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+
+            h2 {
+                font-size: 56px;
+                font-weight: 700;
+                line-height: 66px;
+            }
+
+            p {
+                margin-top: 56px;
+                line-height: 28px;
+                font-weight: 500;
+                font-size: 20px;
+            }
+
+            a.signup {
+                width: 200px;
+                height: 60px;
+                margin-top: 32px;
+            }
+        }
+    }
+
+    div.image {
+        position: relative;
+        width: 50%;
+        height: 700px;
+        display: flex;
+        align-items: center;
+
+        img {
+            position: absolute;
+            height: 500px;
+            right: 13vw;
+        }
+    }
+}
