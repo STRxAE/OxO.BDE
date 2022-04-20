@@ -12,7 +12,7 @@ body {
   background-color: #f2f2f2;
 }
 
-a {
+body.index a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
@@ -33,9 +33,39 @@ li {
   list-style: none;
 }
 
+li a {
+  position: relative;
+}
+
+li a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+li a:hover::before {
+  width: 100%;
+}
+
 a.signup {
   background-color: black;
   color: white;
+  border: 1px solid black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a.signup:hover {
+  color: black;
+  background-color: white;
 }
 
 header {
@@ -66,10 +96,11 @@ header div.right {
   padding-right: 40px;
 }
 
-header h1 {
+header h1.logo {
   margin-right: 50px;
   font-size: 29px;
   font-weight: 700 bold;
+  color: black;
 }
 
 header nav ul {
@@ -155,6 +186,17 @@ div.presentation div.image img {
   height: 500px;
   right: 13vw;
   border-radius: 195px;
+}
+
+div.presentation div.dark-theme {
+  position: absolute;
+  top: 142px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px 0 0 8px;
+  background-color: white;
+  cursor: pointer;
 }
 
 div.grid {
@@ -270,10 +312,42 @@ div.grid {
 #item2 div.text a,
 #item3 div.text a,
 #item6 div.text a {
+  position: relative;
   width: 200px;
   height: 60px;
   border: 1px solid black;
   color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#item2 div.text a::before,
+#item3 div.text a::before,
+#item6 div.text a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 0;
+  background-color: #4e4e4e;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+#item2 div.text a:hover::before,
+#item3 div.text a:hover::before,
+#item6 div.text a:hover::before {
+  height: 100%;
+}
+
+#item2 div.text a:hover,
+#item3 div.text a:hover,
+#item6 div.text a:hover {
+  color: white;
 }
 
 div.contact {
@@ -309,9 +383,35 @@ div.contact div.btn-container a {
 }
 
 div.contact div.btn-container a.contact {
+  position: relative;
   border: 1px solid black;
   color: black;
   margin-left: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+div.contact div.btn-container a.contact::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 0;
+  background-color: #4e4e4e;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+div.contact div.btn-container a.contact:hover::before {
+  height: 100%;
+}
+
+div.contact div.btn-container a.contact:hover {
+  color: white;
 }
 
 /* FOOTER */
@@ -401,4 +501,160 @@ footer div.container div.contact-container div.line2 {
 footer div.container p {
   margin-bottom: 35px;
 }
+
+/* LOGIN PAGE */
+body.login {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.verification {
+  color: rgba(255, 0, 0, 0.6);
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  margin-top: 9px;
+}
+
+div.logincontainer {
+  width: 700px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 1px solid #4e4e4e;
+  padding: 5px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.logincontainer h1 {
+  text-align: center;
+  margin: 10px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px silver solid;
+}
+
+div.logincontainer div {
+  position: relative;
+  width: 50%;
+}
+
+div.logincontainer div input {
+  padding: 10px 0 10px 0;
+  margin: 10px 5px 20px 5px;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+}
+
+div.logincontainer div label {
+  position: absolute;
+  top: 15%;
+  left: 0px;
+  pointer-events: none;
+  color: rgba(128, 128, 128, 0.6);
+  font-weight: 600;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+div.logincontainer div span.line {
+  width: 60%;
+  height: 2px;
+}
+
+div.logincontainer div span.line::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  background-color: rgba(0, 0, 255, 0.4);
+  height: 2px;
+  width: 0%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+div.logincontainer div input:focus ~ span::before,
+div.logincontainer div input:valid ~ span::before {
+  width: 80%;
+  background-color: rgba(0, 0, 255, 0.4);
+}
+
+div.logincontainer div input:focus ~ label,
+div.logincontainer div input:valid ~ label {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  color: rgba(0, 0, 255, 0.4);
+}
+
+div.logincontainer a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+div.logincontainer a:hover {
+  text-decoration: underline;
+}
+
+div.logincontainer div + a {
+  position: relative;
+  top: -15px;
+  color: rgba(0, 0, 255, 0.6);
+}
+
+div.logincontainer button {
+  font-size: 25px;
+  background-color: rgba(0, 0, 255, 0.4);
+  border-radius: 25px;
+  border: none;
+  padding: 10px 50px 10px 50px;
+  font-weight: 700;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 20px 0 30px 0;
+  width: 300px;
+  color: black;
+}
+
+div.logincontainer button:hover {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+div.logincontainer p.login {
+  text-align: center;
+}
+
+div.logincontainer p.login a {
+  color: rgba(0, 0, 255, 0.6);
+}
+
+div.logincontainer div.textboxcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+div.logincontainer div.verifycontainer {
+  position: relative;
+}
+
+/* SIGN UP */
 /*# sourceMappingURL=style.css.map */

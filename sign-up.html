@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>OxOBDE</title>
+    </head>
+    <body class="login">
+        <div class="logincontainer">
+            <h1>Sign Up</h1>
+
+            <div class="textboxcontainer">
+                <div class="textbox">
+                    <input type="text" id="email" required />
+                    <label>E-mail étudiant</label>
+                    <span class="line"></span>
+                </div>
+                <div class="verifycontainer">
+                    <p id="email-not-valid" class="verification">
+                        Veuillez saisir une adresse mail valide.
+                    </p>
+                </div>
+            </div>
+
+            <div class="textboxcontainer">
+                <div class="textbox">
+                    <input type="text" id="username" required />
+                    <label>Identifiant</label>
+                    <span class="line"></span>
+                </div>
+                <div class="verifycontainer">
+                    <p id="username-not-valid" class="verification">
+                        Veuillez saisir un identifiant de plus de 6 lettres.
+                    </p>
+                </div>
+            </div>
+
+            <div class="textboxcontainer">
+                <div class="textbox">
+                    <input type="password" id="password" required />
+                    <label>Mot de Passe</label>
+                    <span class="line"></span>
+                </div>
+                <div class="verifycontainer">
+                    <p id="password-not-valid" class="verification">
+                        Un mot de passe doit avoir au moins 8 caractères avec 1
+                        majuscule et 1 chiffre.
+                    </p>
+                </div>
+            </div>
+
+            <div class="textboxcontainer">
+                <div class="textbox">
+                    <input type="password" id="password2" required />
+                    <label>Confirmer le Mot de Passe</label>
+                    <span class="line"></span>
+                </div>
+                <div class="verifycontainer">
+                    <p id="password-not-confirmed" class="verification">
+                        Veuillez saisir le même mot de passe.
+                    </p>
+                </div>
+            </div>
+
+            <button id="btnlogin" onclick="verifySignup()">S'inscrire</button>
+            <p class="login">
+                Vous avez déjà un compte ? <a href="login.html">Se connecter</a>
+            </p>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

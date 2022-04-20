@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body class="login">
+    <div class="logincontainer">
+      <h1>Login</h1>
+
+        <div class="textboxcontainer">
+          <div class="textbox">
+            <input type="text" id="username" required/>
+            <label>Identifiant</label>
+            <span class="line"></span>
+          </div>
+        </div>
+
+      <div class="textboxcontainer">
+        <input type="password" id="password" required/>
+        <label>Mot de Passe</label> </br>
+        <span class="line"></span>
+      </div>
+      <a href="#">Mot de passe oublié ?</a>
+      <button id="btnlogin" onclick="verifyLogin()">Se connecter</button>
+      <p class="login">Vous n'avez pas encore de compte ? <a href="sign-up.html">S'inscrire</a></p>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
